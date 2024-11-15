@@ -1,0 +1,19 @@
+.qty button,input{
+    background-color: transparent;
+    border:1px solid rgba(0, 0, 0, 0.345);
+    outline: none;
+    padding: 5px;
+    transition: 0.5s;
+}
+.qty input{
+    width: 100px;
+    text-align: center;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.qty button:hover{
+    background-color: #f1c40f;
+}

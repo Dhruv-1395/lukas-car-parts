@@ -1,0 +1,112 @@
+{
+  "product": [
+    {
+      "id": "6ef7",
+      "title": "tayer",
+      "price": "300",
+      "img": "product-2.webp",
+      "sale": "5",
+      "rate": "4",
+      "time": "2024-11-08T05:41:29.077Z"
+    },
+    {
+      "id": "d0f4",
+      "title": "handle",
+      "price": "300",
+      "img": "product-3.webp",
+      "sale": "",
+      "rate": "5",
+      "time": "2024-11-08T05:41:52.596Z"
+    },
+    {
+      "id": "a576",
+      "title": "wheel",
+      "price": "1000",
+      "img": "product-1.png",
+      "sale": "",
+      "rate": "2",
+      "time": "2024-11-08T05:42:23.124Z"
+    },
+    {
+      "id": "7890",
+      "title": "seat",
+      "price": "500",
+      "img": "product-4.png",
+      "sale": "12",
+      "rate": "3",
+      "time": "2024-11-08T09:22:44.544Z"
+    },
+    {
+      "id": "6d77",
+      "title": "engine",
+      "price": "1500",
+      "img": "product-5.png",
+      "sale": "2",
+      "rate": "4",
+      "time": "2024-11-08T09:35:05.865Z"
+    }
+  ],
+  "user": [
+    {
+      "id": "3b85",
+      "username": "xohadadur",
+      "email": "kofedy@mailinator.com",
+      "password": "Pa$$w0rd!"
+    },
+    {
+      "id": "34a4",
+      "username": "curyfunu",
+      "email": "lupefud@mailinator.com",
+      "password": "Pa$$w0rd!"
+    },
+    {
+      "id": "2d67",
+      "username": "hymok",
+      "email": "foweliso@mailinator.com",
+      "password": "Pa$$w0rd!"
+    },
+    {
+      "id": "6e5a",
+      "username": "jovocoba",
+      "email": "gunytyvuno@mailinator.com",
+      "password": "Pa$$w0rd!"
+    }
+  ],
+  "review": [
+    {
+      "id": "7672",
+      "pid": "6ef7",
+      "fname": "Dhruv",
+      "review": "erfewfew",
+      "rate": 2
+    },
+    {
+      "id": "6bbe",
+      "pid": "d0f4",
+      "fname": "trrrrgr",
+      "review": "w4r",
+      "rate": 5
+    },
+    {
+      "id": "30fe",
+      "pid": "d0f4",
+      "fname": "ayz",
+      "review": "dwDQWD",
+      "rate": 1
+    },
+    {
+      "id": "0ed9",
+      "pid": "d0f4",
+      "fname": "Sawyer Mcbride",
+      "review": "Mollitia omnis aliqu",
+      "rate": 4
+    },
+    {
+      "id": "8b66",
+      "pid": "d0f4",
+      "fname": "Uriah Mcgowan",
+      "review": "Ea eos expedita eaqu",
+      "rate": 3
+    }
+  ]
+}

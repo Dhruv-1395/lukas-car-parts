@@ -1,0 +1,33 @@
+.footer{
+    background-color: #222;
+    color: #fff;
+    padding: 50px 0;
+
+}
+.footer p{
+    font-size: 13px;
+    font-weight: 300;
+    margin: 15px 0;
+    color: white;
+}
+.footer .nav-link{
+    font-size: 14px;
+    color: white;
+    padding-bottom: 0;
+    font-weight: 300;
+    transition: 0.3s;
+
+}
+.footer .title{
+    text-decoration: underline;
+}
+.footer .nav-link:hover{
+    color:#eeb644;
+    transform: translateX(5px);
+}
+
+@media (max-width:991px){
+    .footer .nav{
+        margin-bottom: 30px;
+    }
+}

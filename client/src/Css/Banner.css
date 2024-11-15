@@ -1,0 +1,13 @@
+.banner{
+    width: 100%;
+    height: 250px;
+    background-image: url('../assets/page-header-bg.jpg');
+    background-size: cover;
+    background-position:40%;
+}
+.banner .nav-link{
+    color: white;
+}
+.active{
+    color: #eeb644 !important;
+}

@@ -1,0 +1,54 @@
+.menus button{
+    border: none;
+    width: 100%;
+    margin: 0;
+    padding: 8px 0;
+}
+.content{
+    height:auto;
+    padding: 10px ;
+    background-color: #F6F6F6;
+   
+}
+.review .swiper {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .review .swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .review .card{
+    border:2px solid rgba(0, 0, 0, 0.28);
+  }
+  .review .card h5,p{
+    color: black;
+    font-weight: 500;
+  }
+  .review .card img{
+    width: 80px;
+  }
+  .review .card p{
+    font-size: 12px;
+  }
+  .review .ratings .anticon svg{
+    height: 0.8em !important;
+    width: 0.8em;
+    /* color: #EEB644; */
+  }
+  .review input:focus,textarea:focus{
+    border: 1px solid #EEB644;
+    outline: none;
+  }
+  .review input::placeholder,textarea::placeholder{
+    color: black;
+    font-weight: 400;
+    font-size: 13px;
+  }
+  .review .btn{
+    width: 100px;
+    border-radius: 20px;
+    margin-top: 30px;
+  }

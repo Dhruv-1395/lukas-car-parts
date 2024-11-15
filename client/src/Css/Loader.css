@@ -1,0 +1,41 @@
+.loader-container{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    position: relative;
+    background-color: transparent;
+}
+.loader-container .leftdiv,.rightdiv{
+    width: 50%;
+    height: 100vh;
+    position: absolute;
+}
+.leftdiv{
+    background-color: #282828;
+    left: 0;
+    top: 0;
+}
+.rightdiv{
+    background-color: #930A0B;
+    right: 0;
+    top: 0;
+}
+.loader-container img{
+    position: absolute;
+    z-index: 100;
+    width: 100px;
+    top: 50%;
+    left: 47%;
+    border-radius: 50%;
+    transform: translate(-50%,50%);
+    background-color: transparent;
+    animation: rotate 2s infinite linear;
+}
+@keyframes rotate {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
