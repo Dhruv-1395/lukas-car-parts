@@ -1,23 +1,31 @@
 import React from 'react'
 import {  Layout, theme } from 'antd';
+
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+} from "react-router-dom";
+
 import Navbar from './Navbar';
+import Products from './Products';
+import Orders from './Orders';
 const { Header, Content, Footer } = Layout;
-const items = new Array(3).fill(null).map((_, index) => ({
-  key: String(index + 1),
-  label: `nav ${index + 1}`,
-}));
+
 const HomeLayout = () => {
     const {
         token: { colorBgContainer, borderRadiusLG },
       } = theme.useToken();
   return (
     <Layout>
+       <Router>
     <Header
       style={{ 
         position:'sticky',
         top:0,
        }}
     >
+     
      <Navbar />
     </Header>
     <Content
@@ -36,7 +44,10 @@ const HomeLayout = () => {
           borderRadius: borderRadiusLG,
         }}
       >
-        Content
+        <Routes>
+          <Route path='/' element={<Products />} />
+          <Route path='/orders' element={<Orders />} />
+        </Routes>
       </div>
     </Content>
     <Footer
@@ -46,8 +57,9 @@ const HomeLayout = () => {
     >
       Ant Design ©{new Date().getFullYear()} Created by Ant UED
     </Footer>
+    </Router>
   </Layout>
   )
 }
 
-export default HomeLayout
+export default HomeLayout;

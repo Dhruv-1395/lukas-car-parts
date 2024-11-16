@@ -102,12 +102,14 @@
 }
 .product .display-products .card .sale{
     position: absolute;
+    width: auto;
     top: 5px;
     left: 5px;
     background-color: black;
     color: white;
     font-size: 10px;
     padding: 2px 5px;
+    z-index: 50;
 }
 .product .card:hover{
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;

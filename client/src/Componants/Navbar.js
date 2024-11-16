@@ -1,23 +1,34 @@
-import React from 'react'
-import gsap from "gsap";
+import React,{useState,useEffect} from 'react'
+import axios from 'axios';
 import Logo from '../assets/logo.webp'
 import '../Css/Navbar.css'
 import { FaShoppingBag } from "react-icons/fa";
-import { Tooltip } from 'antd';
 import { Link } from 'react-router-dom';
 import { TiThMenu } from "react-icons/ti";
 
 
 const Navbar = () => {
+const[count,setCount] = useState([]);
 
   const Openmenu = () =>{
     document.getElementById('sidebar').style.left='0%';
-
   }
-  
+  useEffect(() => {
+    const fetchCartCount = async () => {
+      try {
+        const response = await axios.get('http://localhost:5000/cart');
+        setCount(response.data); 
+      } catch (err) {
+        console.error('Error fetching cart count:', err);
+        setCount(0);  
+      }
+    };
+
+    fetchCartCount();
+  }, []);  
   
   return (
-    <nav className="navbar navbar-light ">
+    <nav className="navbar navbar-light shadow ">
   <div className="container">
     <a className="navbar-brand" href="/">
       <img src={Logo} alt="logo" />
@@ -76,7 +87,7 @@ const Navbar = () => {
 <TiThMenu onClick={Openmenu}/>
 </div>
     <div className="cart" >
-    <FaShoppingBag />
+    <FaShoppingBag /><sup><span id='Cartcount'>{count.length || 0}</span></sup>
     </div>
 </div>
   </div>

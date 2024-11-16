@@ -15,7 +15,6 @@
 }
 .single-product ul li{
   list-style: none;
-  padding: 0px 10px;
   font-weight: 400;
 }
 
@@ -73,8 +72,6 @@
     height: 100%;
   }
   
-  
-  
   .swiper-slide img {
     display: block;
     width: 100%;
@@ -82,3 +79,9 @@
     object-fit: cover;
   }
   
+  table .color li,.size li{
+    border-radius: 5px;
+    padding: 4px 8px;
+    cursor: pointer;
+    font-size: 14px;
+  }

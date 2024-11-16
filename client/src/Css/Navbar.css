@@ -37,3 +37,8 @@
 .navbar .ant-tooltip-inner{
     font-size: 13px;
 }
+#Cartcount{
+    background-color: #eeb644;
+    padding: 2px 8px;
+    border-radius: 50%;
+}

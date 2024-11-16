@@ -11,6 +11,8 @@ import { FreeMode, Navigation, Thumbs } from 'swiper/modules';
 import QtyAddCart from './Qty_addcart';
 const Singleproduct = () => {
     const [thumbsSwiper, setThumbsSwiper] = useState(null);
+    const [pcolor,setColor] = useState('black');
+    const [psize,setSize] = useState('large')
     const [products, setProducts] = useState([]);
     useEffect(() => {
         
@@ -29,15 +31,24 @@ const Singleproduct = () => {
     const othersItem = products.filter((item) => item.id !== id);
     const title = selectItem.length > 0 ? selectItem[0].title : null;
     const price = selectItem.length > 0 ? selectItem[0].price : null;
-    console.log(selectItem);
     
+    const ProductColor = (color) => {
+        if(color === pcolor){
+            return {backgroundColor:"black",color:"white"};
+        }
+        else{}
+    }
+    const ProductSize = (size) => {
+        if(size === psize){
+            return {backgroundColor:"black",color:"white"};
+        }
+        else{}
+    }
+
 
     return (
         <div className="single-product">
-
-
             <div className="container">
-                
                         <div className="row">
                             <div className="col-lg-5">
                                 <Swiper
@@ -53,8 +64,8 @@ const Singleproduct = () => {
                                     className="mySwiper2"
                                 >
                                     {
-                                        selectItem.map((item) => (
-                                            <SwiperSlide >
+                                        selectItem.map((item,index) => (
+                                            <SwiperSlide key={index}>
                                                 <img src={require('../assets/'+item.img)} alt='' />
                                             </SwiperSlide>
                                         ))
@@ -80,8 +91,8 @@ const Singleproduct = () => {
                                     className="mySwiper mt-3"
                                 >
                                     {
-                                        selectItem.map((item) => (
-                                            <SwiperSlide style={{ border: "1px solid #cacfd2 " }} >
+                                        selectItem.map((item,index) => (
+                                            <SwiperSlide key={index} style={{ border: "1px solid #cacfd2 " }} >
                                                 <img src={require('../assets/'+item.img)} alt='' />
                                             </SwiperSlide>
                                         ))
@@ -106,29 +117,55 @@ const Singleproduct = () => {
                                     Pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circles occur in and pain can procure him some great ple cum solute nobie est eligendi option</p>
 
                                 <table className='table '>
+                                    <tbody>
                                     <tr>
                                         <td>Color</td>
                                         <td >
-                                            <ul className='d-flex align-items-center'>
-                                                <li>Black</li>
-                                                <li>Blue</li>
-                                                <li>Green</li>
+                                            <ul className='d-flex align-items-center color'>
+                                                <li 
+                                                style={ProductColor('black')}
+                                                onClick={()=> setColor('black')}
+                                                >Black</li>
+                                                <li  
+                                                style={ProductColor('blue')}
+                                                onClick={()=> setColor('blue')}
+                                                >Blue</li>
+                                                <li  
+                                                style={ProductColor('green')}
+                                                onClick={()=> setColor('green')}
+                                                >Green</li>
                                             </ul>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>Size</td>
                                         <td>
-                                            <ul className='d-flex align-items-center'>
-                                                <li>Large</li>
-                                                <li>Medium</li>
-                                                <li>Small</li>
+                                            <ul className='d-flex align-items-center size'>
+                                                <li
+                                                  style={ProductSize('large')}
+                                                onClick={()=> setSize('large')}
+                                                >Large</li>
+                                                <li
+                                                  style={ProductSize('medium')}
+                                                onClick={()=> setSize('medium')}
+                                                >Medium</li>
+                                                <li
+                                                  style={ProductSize('small')}
+                                                onClick={()=> setSize('small')}
+                                                >Small</li>
                                             </ul>
                                         </td>
                                     </tr>
+                                    </tbody>
                                 </table>
                                 <div className="qty-addcart">
-                                    <QtyAddCart />
+                                    <QtyAddCart 
+                                    pid={id}
+                                    title={title}
+                                    price={price}
+                                    color={pcolor}
+                                    size={psize}
+                                    />
                                 </div>
                             </div>
                         </div>
