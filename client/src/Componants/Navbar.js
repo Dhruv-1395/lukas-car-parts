@@ -5,10 +5,12 @@ import '../Css/Navbar.css'
 import { FaShoppingBag } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 import { TiThMenu } from "react-icons/ti";
+import { useNavigate } from 'react-router-dom';
 
 
 const Navbar = () => {
 const[count,setCount] = useState([]);
+const navigate = useNavigate();
 
   const Openmenu = () =>{
     document.getElementById('sidebar').style.left='0%';
@@ -25,8 +27,10 @@ const[count,setCount] = useState([]);
     };
 
     fetchCartCount();
-  }, []);  
-  
+  }, [count]);  
+  const handleCart = () =>{
+      navigate('/cartlist')
+  }
   return (
     <nav className="navbar navbar-light shadow ">
   <div className="container">
@@ -45,9 +49,9 @@ const[count,setCount] = useState([]);
     </a>
   </li>
   <li className="nav-item">
-    <a className="nav-link" href="/">
+    <Link className="nav-link" to="/">
       Shop
-    </a>
+    </Link>
   </li>
   <li className="nav-item">
     <a className="nav-link" href="/">
@@ -86,7 +90,7 @@ const[count,setCount] = useState([]);
 <div className="sidebar-toggle">
 <TiThMenu onClick={Openmenu}/>
 </div>
-    <div className="cart" >
+    <div className="cart" onClick={handleCart}>
     <FaShoppingBag /><sup><span id='Cartcount'>{count.length || 0}</span></sup>
     </div>
 </div>

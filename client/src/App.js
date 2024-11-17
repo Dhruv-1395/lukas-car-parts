@@ -15,6 +15,7 @@ import {
 import Register from './Componants/Register';
 import Loader from "./Componants/Loader";
 import Sidebar from "./Componants/Sidebar";
+import Cartlist from "./Componants/Cartlist";
 
 function App() {
   return (
@@ -46,6 +47,8 @@ function AppContent() {
             <Route path='/' element={<Product />} />
             <Route path='/cart/:id' element={<Cart />} />
             <Route path='/register' element={<Register />} />
+            <Route path='/cartlist' element={<Cartlist />} />
+
           </Routes>
           <footer>
             <Footer />

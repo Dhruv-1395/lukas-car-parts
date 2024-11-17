@@ -34,7 +34,7 @@ const Lessproduct = ({id,title,price,img,sale,rate}) => {
                     </div>
                     <div className="detail d-flex flex-column">
                       <a href="/" className='nav-link titlee'>{title}</a>
-                      <span className='prices'>Price: <span className='price'>${price}</span></span>
+                      <span className='prices'>Price: <span className='price'>₹{price}</span></span>
                       <div className="menu-icon">
                         <ul className='nav'>
                           <li><a href="/" className='nav-link'><FaShoppingBag /></a> </li>

@@ -31,7 +31,9 @@ const Singleproduct = () => {
     const othersItem = products.filter((item) => item.id !== id);
     const title = selectItem.length > 0 ? selectItem[0].title : null;
     const price = selectItem.length > 0 ? selectItem[0].price : null;
+    const img = selectItem.length > 0 ? selectItem[0].img : null;
     
+
     const ProductColor = (color) => {
         if(color === pcolor){
             return {backgroundColor:"black",color:"white"};
@@ -161,6 +163,7 @@ const Singleproduct = () => {
                                 <div className="qty-addcart">
                                     <QtyAddCart 
                                     pid={id}
+                                    img={img}
                                     title={title}
                                     price={price}
                                     color={pcolor}

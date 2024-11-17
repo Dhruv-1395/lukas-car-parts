@@ -1,12 +1,14 @@
 import React from 'react'
 import axios from 'axios'
+import { useNavigate } from 'react-router-dom';
 import toast from 'react-hot-toast'
 import '../Css/Qty_Addcart.css'
 import { useState } from 'react'
-const QtyAddCart = ({pid,title,price,color,size}) => {
+const QtyAddCart = ({pid,img,title,price,color,size}) => {
 
     const [qty,setQty] = useState(1);
-    
+    const navigate = useNavigate();
+
     const handleQtyInc = () =>{
        let qty = parseInt(document.getElementById('qty').value);
       let newqty = document.getElementById('qty').value = qty + 1;
@@ -24,11 +26,12 @@ const QtyAddCart = ({pid,title,price,color,size}) => {
         let cartcount = parseInt(document.getElementById('Cartcount').innerText);
         console.log(cartcount);
         
-        axios.post('http://localhost:5000/cart',{pid:pid,pname:title,price:price,color:color,size:size,qty:qty})
+        axios.post('http://localhost:5000/cart',{pid:pid,img:img,pname:title,price:price,color:color,size:size,qty:qty})
         .then(res =>{
             if(res){
                 toast.success('Product Added 👍');
                 document.getElementById('Cartcount').innerText=cartcount += 1;
+                navigate('/cartlist');
             }
         })
         .catch(err => console.log(err));

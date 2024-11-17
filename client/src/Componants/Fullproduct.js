@@ -39,7 +39,7 @@ const Fullproduct = ({id, title, price, img ,sale,rate}) => {
                         <div className="col-md-8">
                             <div className="card-body">
                                 <h5 className="card-title">{title}</h5>
-                                <span className='prices'>Price: <span className='price'>${price}</span></span>
+                                <span className='prices'>Price: <span className='price'>₹{price}</span></span>
                                 <div className="menu-icon">
                                     <ul className='nav'>
                                         <li><a href="/" className='nav-link'><FaShoppingBag /></a> </li>

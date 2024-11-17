@@ -1,0 +1,47 @@
+.cartlist{
+    padding: 50px 0;
+    min-height: 100vh;
+}
+.cartlist table,td,th{
+    border: 1px solid rgba(0, 0, 0, 0.426);
+    text-align: center;
+}
+.cartlist .emptycart{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.cartlist .emptycart img{
+    width: 200px;
+}
+.animated-image {
+    animation: anime 2s ease-in-out infinite;
+    opacity: 1;
+  }
+  
+  /* Define the keyframes for the animation */
+  @keyframes anime {
+    0% {
+      transform: translateY(-50px); /* Starts 50px above */
+    }
+    50% {
+      transform: translateY(20px); /* Moves down by 20px */
+    }
+    100% {
+      transform: translateY(-50px); /* Goes back up */
+    }
+  }
+
+  .check-out{
+    background-color: black;
+    outline: none;
+    border: none;
+    transition: 0.3s;
+  }
+  .check-out:hover{
+    background-color:#eeb644;
+
+  }
