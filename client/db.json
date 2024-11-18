@@ -132,6 +132,51 @@
     }
   ],
   "orders": [
-   
+    {
+      "id": "0cff",
+      "order": [
+        {
+          "item": "product-2.webp",
+          "product": "tayer",
+          "color": "blue",
+          "size": "medium",
+          "price": "300",
+          "qty": 3,
+          "grandtotal": "₹1440"
+        },
+        {
+          "item": "product-3.webp",
+          "product": "handle",
+          "color": "black",
+          "size": "large",
+          "price": "300",
+          "qty": 1,
+          "grandtotal": "₹1440"
+        }
+      ]
+    },
+    {
+      "id": "6b7f",
+      "order": [
+        {
+          "item": "product-2.webp",
+          "product": "tayer",
+          "color": "blue",
+          "size": "medium",
+          "price": "300",
+          "qty": 3,
+          "grandtotal": "₹1440"
+        },
+        {
+          "item": "product-3.webp",
+          "product": "handle",
+          "color": "black",
+          "size": "large",
+          "price": "300",
+          "qty": 1,
+          "grandtotal": "₹1440"
+        }
+      ]
+    }
   ]
 }

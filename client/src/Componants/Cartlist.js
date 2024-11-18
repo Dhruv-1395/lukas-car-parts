@@ -5,18 +5,16 @@ import emptycart from "../assets/empty-cart.png";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { FaTruckArrowRight } from "react-icons/fa6";
-import { jsPDF } from "jspdf";
 import { useRef } from "react";
-import "jspdf-autotable";
 
 const Cartlist = () => {
   const [items, setItems] = useState([]);
   // console.log(items[0]);
   
-  const [orders,setOrders] = useState({});
+  const [orders,setOrders] = useState([]);
   const [subtotal, setSubTotal] = useState(0);
   const count = items.length;
-  const pdfref = useRef();
+  const gtotal = useRef(null);
   const Subtotal = () => {
     const sum = items.reduce((acc, curr) => {
       return acc + curr.price * curr.qty;
@@ -45,11 +43,38 @@ const Cartlist = () => {
   }, [items]);
 
   const handleCheckOut = () => {
-    // axios.post('http://localhost:5000/orders')
-    // .then(res => console.log(res))
-    // .catch(err => console.log(err))
+
+
+    let orderObjects = items.map((item) => {
+      return {
+        item: item.img,
+        product: item.pname,
+        color: item.color,
+        size: item.size,
+        price: item.price,
+        qty: item.qty,
+        grandtotal: gtotal.current.innerText, 
+      };
+    });
+console.log(orderObjects);
+
+//     setTimeout(()=>{
+//   axios.post('http://localhost:5000/orders',{order:orderObjects})
+//     .then(res => console.log(res))
+//     .catch(err => console.log(err))
+//  },1000)
+   
+//  setTimeout(() => {
+//   axios.get('http://localhost:5000/orders')
+//   .then(res => setOrders(res.data.order))
+//   .catch(err => console.log(err))
+//  }, 2000);
+
+//     setTimeout(()=>{
+//       console.log(orders);
+      
+//     },3000)
   };
-  
   
 
   const handleRemove = (id) => {
@@ -78,7 +103,7 @@ const Cartlist = () => {
         ) : (
           <>
             <div className="table-responsive">
-              <table ref={pdfref} className="table ">
+              <table className="table ">
                 <thead>
                   <tr>
                     <th>Item</th>
@@ -146,7 +171,7 @@ const Cartlist = () => {
                       <td style={{ fontWeight: 600, color: "#eeb644" }}>
                         Grand-Total :
                       </td>
-                      <td style={{ fontWeight: 600, color: "#eeb644" }}>
+                      <td ref={gtotal} style={{ fontWeight: 600, color: "#eeb644" }}>
                         ₹
                         {subtotal +
                           (subtotal * 18) / 100 +
