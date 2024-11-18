@@ -9,11 +9,13 @@ import 'swiper/css/navigation';
 import 'swiper/css/thumbs';
 import { FreeMode, Navigation, Thumbs } from 'swiper/modules';
 import QtyAddCart from './Qty_addcart';
+
 const Singleproduct = () => {
     const [thumbsSwiper, setThumbsSwiper] = useState(null);
     const [pcolor,setColor] = useState('black');
     const [psize,setSize] = useState('large')
     const [products, setProducts] = useState([]);
+    
     useEffect(() => {
         
             // axios.get("http://localhost:5000/api/products")

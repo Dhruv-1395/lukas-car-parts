@@ -109,5 +109,29 @@
       "rate": 3
     }
   ],
-  "cart": []
+  "cart": [
+    {
+      "id": "ad40",
+      "pid": "6ef7",
+      "img": "product-2.webp",
+      "pname": "tayer",
+      "price": "300",
+      "color": "blue",
+      "size": "medium",
+      "qty": 3
+    },
+    {
+      "id": "c576",
+      "pid": "d0f4",
+      "img": "product-3.webp",
+      "pname": "handle",
+      "price": "300",
+      "color": "black",
+      "size": "large",
+      "qty": 1
+    }
+  ],
+  "orders": [
+   
+  ]
 }
