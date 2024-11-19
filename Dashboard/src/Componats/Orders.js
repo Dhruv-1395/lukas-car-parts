@@ -4,7 +4,9 @@ import axios from "axios";
 const Orders = () => {
   const [orders, setOrders] = useState([]);
   const [products, setProducts] = useState([]);
-  console.log(products);
+  const [singleproduct,setSingleProduct] = useState([]);
+  console.log(singleproduct);
+  
 
   useEffect(() => {
     const data = async () => {
@@ -12,9 +14,8 @@ const Orders = () => {
         const response = await axios.get("http://localhost:5000/orders");
         setOrders(response.data);
   
-        // Create a new products array by mapping over orders
         const productsArray = response.data.map(order => order.order);
-        setProducts(productsArray); // Set the products state once
+        setProducts(productsArray); 
       } catch (error) {
         console.error(error);
       }
@@ -22,8 +23,26 @@ const Orders = () => {
     };
 
     data();
+   
+     
 
   }, []);
+
+  useEffect(()=>{
+    let updatedProducts = [];
+
+    for (let i = 0; i < orders.length; i++) {
+    
+         updatedProducts = [...updatedProducts, ...products[i]]; // Combine arrays
+      
+      
+    }
+
+    // Update the state once with the accumulated products
+    setSingleProduct(updatedProducts);
+  },[products])
+
+ 
   return (
     <div className="orders">
       <div className="table-responsive">
@@ -42,30 +61,44 @@ const Orders = () => {
             </tr>
           </thead>
           <tbody>
-             {products.length > 0 ? (
-              products.map((item, index) => (
-                <tr key={item.pid}>
-                  <td>{orders[0].id}</td>
-                  <td>
-                    <img
-                      src={`/assets/${item.item}`}
-                      alt="product"
-                      width={80}
-                    />
-                  </td>
-                  <td>{item.product}</td>
-                  <td>{item.price}</td>
-                  <td>{item.color}</td>
-                  <td>{item.size}</td>
-                  <td>{item.qty}</td>
-                  <td>{item.total}</td>
-                </tr>
+           
+          {orders.length > 0 ? (
+              orders.map((order, orderIndex) => (
+                <>
+                  {/* Display the Order Row */}
+                  <tr key={order.id}>
+                    <td colSpan="9" style={{ fontWeight: "bold" }}>
+                      Order ID: {order.id}
+                    </td>
+                  </tr>
+
+                  {/* Loop over each product in the current order */}
+                  {products[orderIndex]?.map((item) => (
+                    <tr key={item.pid}>
+                      <td>{order.id}</td>
+                      <td>
+                        <img
+                          src={`/assets/${item.item}`}
+                          alt="product"
+                          width={80}
+                        />
+                      </td>
+                      <td>{item.product}</td>
+                      <td>{item.price}</td>
+                      <td>{item.color}</td>
+                      <td>{item.size}</td>
+                      <td>{item.qty}</td>
+                      <td>{item.total}</td>
+                      <td>{item.grandTotal}</td>
+                    </tr>
+                  ))}
+                </>
               ))
             ) : (
               <tr>
-                <td colSpan="5">Loading...</td>
+                <td colSpan="9">Loading...</td>
               </tr>
-            )} 
+            )}
           </tbody>
         </table>
       </div>
