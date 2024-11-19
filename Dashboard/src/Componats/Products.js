@@ -27,7 +27,7 @@ const Products = () => {
                 </div>
             </div>
             <div className="table-responsive">
-                <table className="table table-striped table-bordered">
+                <table className="table table-striped table-bordered table-hover">
                     <thead>
                         <tr>
                             <th>No</th>

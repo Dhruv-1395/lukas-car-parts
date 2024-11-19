@@ -112,10 +112,10 @@
   "cart": [],
   "orders": [
     {
-      "id": "d1b3",
+      "id": "5b5c",
       "order": [
         {
-          "pid": "5948",
+          "pid": "4c69",
           "item": "product-2.webp",
           "product": "tayer",
           "color": "black",
@@ -125,7 +125,23 @@
           "total": 300
         }
       ],
-      "date": "Tue, 19 Nov 2024 07:03:35 GMT"
+      "date": "Tue, 19 Nov 2024 09:12:21 GMT"
+    },
+    {
+      "id": "7208",
+      "order": [
+        {
+          "pid": "0245",
+          "item": "product-3.webp",
+          "product": "handle",
+          "color": "black",
+          "size": "medium",
+          "price": "300",
+          "qty": 3,
+          "total": 900
+        }
+      ],
+      "date": "Tue, 19 Nov 2024 10:06:20 GMT"
     }
   ]
 }
