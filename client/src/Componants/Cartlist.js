@@ -6,15 +6,17 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import { FaTruckArrowRight } from "react-icons/fa6";
 import { useRef } from "react";
+import Spinner from 'react-bootstrap/Spinner';
 
 const Cartlist = () => {
   const [items, setItems] = useState([]);
-  // console.log(items[0]);
-  
-  const [orders,setOrders] = useState([]);
+  const [orders, setOrders] = useState([]);
   const [subtotal, setSubTotal] = useState(0);
+  const [isloading,setIsLoading] = useState(false);
   const count = items.length;
   const gtotal = useRef(null);
+  const totalref = useRef(null);
+  const checkoutref = useRef(null);
   const Subtotal = () => {
     const sum = items.reduce((acc, curr) => {
       return acc + curr.price * curr.qty;
@@ -42,40 +44,39 @@ const Cartlist = () => {
     }
   }, [items]);
 
-  const handleCheckOut = () => {
-
-
-    let orderObjects = items.map((item) => {
+  const handleCheckOut = async () => {
+    setIsLoading(true);
+    const btn = checkoutref.current;
+    btn.classList.add('disabled');
+    
+    const orderObjects = items.map((item) => {
       return {
+        pid: item.id,
         item: item.img,
         product: item.pname,
         color: item.color,
         size: item.size,
         price: item.price,
         qty: item.qty,
-        grandtotal: gtotal.current.innerText, 
+        total: item.price * item.qty // Assuming gtotal is a ref
       };
     });
-console.log(orderObjects);
 
-//     setTimeout(()=>{
-//   axios.post('http://localhost:5000/orders',{order:orderObjects})
-//     .then(res => console.log(res))
-//     .catch(err => console.log(err))
-//  },1000)
-   
-//  setTimeout(() => {
-//   axios.get('http://localhost:5000/orders')
-//   .then(res => setOrders(res.data.order))
-//   .catch(err => console.log(err))
-//  }, 2000);
+    const cid = items.map(item => item.id);
+    const date = new Date();
+    try {
+      const orderResponse = await axios.post('http://localhost:5000/orders', { order: orderObjects, date: date.toUTCString() });
+      console.log('Order response:', orderResponse);
 
-//     setTimeout(()=>{
-//       console.log(orders);
-      
-//     },3000)
+
+      const cartClear = cid.map((id) => axios.delete(`http://localhost:5000/cart/${id}`));
+
+
+    } catch (error) {
+      console.error('Error during checkout process:', error);
+    }
   };
-  
+
 
   const handleRemove = (id) => {
     let cartcount = parseInt(document.getElementById("Cartcount").innerText);
@@ -133,7 +134,7 @@ console.log(orderObjects);
                         <td>{items.size}</td>
                         <td>₹{items.price}</td>
                         <td>{items.qty}</td>
-                        <td>₹{items.qty * items.price}</td>
+                        <td ref={totalref}>₹{items.qty * items.price}</td>
                         <td>
                           <button
                             className="btn btn-danger"
@@ -181,10 +182,18 @@ console.log(orderObjects);
                   </tbody>
                 </table>
                 <button
+                ref={checkoutref}
                   className="btn btn-primary w-100"
                   onClick={handleCheckOut}
                 >
-                  Check out
+                  {
+                    (isloading)?<Spinner animation="border" role="status">
+                    <span className="visually-hidden">Loading...</span>
+                  </Spinner>
+                  :
+                  "Check out"
+                  }
+                  
                 </button>
               </div>
             </div>

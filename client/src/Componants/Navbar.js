@@ -27,7 +27,7 @@ const navigate = useNavigate();
     };
 
     fetchCartCount();
-  }, [count]);  
+  }, []);  
   const handleCart = () =>{
       navigate('/cartlist')
   }
