@@ -57,7 +57,7 @@ const Orders = () => {
               <th>Size</th>
               <th>Qty</th>
               <th>Total</th>
-              <th>Gran-Total</th>
+              <th>Date</th>
             </tr>
           </thead>
           <tbody>
@@ -73,9 +73,9 @@ const Orders = () => {
                   </tr>
 
                   {/* Loop over each product in the current order */}
-                  {products[orderIndex]?.map((item) => (
+                  {products[orderIndex]?.map((item,index) => (
                     <tr key={item.pid}>
-                      <td>{order.id}</td>
+                      <td>{index + 1}</td>
                       <td>
                         <img
                           src={`/assets/${item.item}`}
@@ -89,7 +89,7 @@ const Orders = () => {
                       <td>{item.size}</td>
                       <td>{item.qty}</td>
                       <td>{item.total}</td>
-                      <td>{item.grandTotal}</td>
+                      <td>{order.date}</td>
                     </tr>
                   ))}
                 </>

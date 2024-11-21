@@ -7,16 +7,16 @@ import { Link } from "react-router-dom";
 import { FaTruckArrowRight } from "react-icons/fa6";
 import { useRef } from "react";
 import Spinner from 'react-bootstrap/Spinner';
-
+import { useNavigate } from "react-router-dom";
 const Cartlist = () => {
   const [items, setItems] = useState([]);
-  const [orders, setOrders] = useState([]);
   const [subtotal, setSubTotal] = useState(0);
   const [isloading,setIsLoading] = useState(false);
   const count = items.length;
   const gtotal = useRef(null);
   const totalref = useRef(null);
   const checkoutref = useRef(null);
+  const navigate = useNavigate();
   const Subtotal = () => {
     const sum = items.reduce((acc, curr) => {
       return acc + curr.price * curr.qty;
@@ -75,6 +75,10 @@ const Cartlist = () => {
     } catch (error) {
       console.error('Error during checkout process:', error);
     }
+
+    setTimeout(()=>{
+      navigate('/checkout');
+    },2000);
   };
 
 

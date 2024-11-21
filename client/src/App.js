@@ -16,7 +16,7 @@ import Register from './Componants/Register';
 import Loader from "./Componants/Loader";
 import Sidebar from "./Componants/Sidebar";
 import Cartlist from "./Componants/Cartlist";
-
+import OrderRecipt from "./Componants/OrderRecipt";
 function App() {
   return (
     <Router>
@@ -48,7 +48,7 @@ function AppContent() {
             <Route path='/cart/:id' element={<Cart />} />
             <Route path='/register' element={<Register />} />
             <Route path='/cartlist' element={<Cartlist />} />
-
+            <Route path='/checkout' element={<OrderRecipt />} />
           </Routes>
           <footer>
             <Footer />

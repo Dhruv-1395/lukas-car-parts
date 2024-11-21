@@ -17,21 +17,6 @@ const Review = () => {
     const [review,setReview] = useState('');
     const { id } = useParams();
 
-    useEffect(()=>{
-        async function fetchData(){
-            try{
-                const data = await axios.get("http://localhost:5000/review")
-                .then(res => setReviewData(res.data))
-                .then(err => console.log(err));
-            } catch(err){
-                console.log(err);
-            }
-        }
-       fetchData()
-    },[])
-    console.log(reviewdata);
-    
-
     const handleSubmit = async () =>{
         await axios.post("http://localhost:5000/review",{pid:id,fname:fname,review:review,rate:ratevalue})
         .then(Result => {
@@ -45,8 +30,21 @@ const Review = () => {
         setRateValue(0);
         setReview('');
     }
+
+    useEffect(()=>{
+        async function fetchData(){
+            try{
+                const data = await axios.get("http://localhost:5000/review")
+                .then(res => setReviewData(res.data))
+                .then(err => console.log(err));
+            } catch(err){
+                console.log(err);
+            }
+        }
+       fetchData()
+    },[])
+    
     const productReview = reviewdata.filter((item,index)=>item.pid === id);
-    console.log(productReview);
     
     return (
         <>
