@@ -119,10 +119,10 @@
   "cart": [],
   "orders": [
     {
-      "id": "5b5c",
+      "id": "9d29",
       "order": [
         {
-          "pid": "4c69",
+          "pid": "aa2e",
           "item": "product-2.webp",
           "product": "tayer",
           "color": "black",
@@ -132,101 +132,7 @@
           "total": 300
         }
       ],
-      "date": "Tue, 19 Nov 2024 09:12:21 GMT"
-    },
-    {
-      "id": "7208",
-      "order": [
-        {
-          "pid": "0245",
-          "item": "product-3.webp",
-          "product": "handle",
-          "color": "black",
-          "size": "medium",
-          "price": "300",
-          "qty": 3,
-          "total": 900
-        }
-      ],
-      "date": "Tue, 19 Nov 2024 10:06:20 GMT"
-    },
-    {
-      "id": "9c51",
-      "order": [
-        {
-          "pid": "8d0d",
-          "item": "product-3.webp",
-          "product": "handle",
-          "color": "black",
-          "size": "large",
-          "price": "300",
-          "qty": 2,
-          "total": 600
-        },
-        {
-          "pid": "1142",
-          "item": "product-4.png",
-          "product": "seat",
-          "color": "black",
-          "size": "large",
-          "price": "500",
-          "qty": 2,
-          "total": 1000
-        },
-        {
-          "pid": "a693",
-          "item": "product-1.png",
-          "product": "wheel",
-          "color": "black",
-          "size": "large",
-          "price": "1000",
-          "qty": 1,
-          "total": 1000
-        }
-      ],
-      "date": "Tue, 19 Nov 2024 14:49:23 GMT"
-    },
-    {
-      "id": "1b19",
-      "order": [
-        {
-          "pid": "fb48",
-          "item": "product-5.png",
-          "product": "engine",
-          "color": "blue",
-          "size": "medium",
-          "price": "1500",
-          "qty": 2,
-          "total": 3000
-        },
-        {
-          "pid": "2274",
-          "item": "product-3.webp",
-          "product": "handle",
-          "color": "blue",
-          "size": "small",
-          "price": "300",
-          "qty": 3,
-          "total": 900
-        }
-      ],
-      "date": "Wed, 20 Nov 2024 09:15:57 GMT"
-    },
-    {
-      "id": "57b7",
-      "order": [
-        {
-          "pid": "d535",
-          "item": "product-3.webp",
-          "product": "handle",
-          "color": "black",
-          "size": "large",
-          "price": "300",
-          "qty": 1,
-          "total": 300
-        }
-      ],
-      "date": "Wed, 20 Nov 2024 09:30:56 GMT"
+      "date": "Fri, 22 Nov 2024 10:58:33 GMT"
     }
   ]
 }
