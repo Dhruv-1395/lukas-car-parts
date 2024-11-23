@@ -119,20 +119,30 @@
   "cart": [],
   "orders": [
     {
-      "id": "9d29",
+      "id": "8faf",
       "order": [
         {
-          "pid": "aa2e",
+          "pid": "2c58",
           "item": "product-2.webp",
           "product": "tayer",
-          "color": "black",
+          "color": "blue",
           "size": "large",
           "price": "300",
+          "qty": 2,
+          "total": 600
+        },
+        {
+          "pid": "42f8",
+          "item": "product-1.png",
+          "product": "wheel",
+          "color": "black",
+          "size": "large",
+          "price": "1000",
           "qty": 1,
-          "total": 300
+          "total": 1000
         }
       ],
-      "date": "Fri, 22 Nov 2024 10:58:33 GMT"
+      "date": "Sat, 23 Nov 2024 05:13:17 GMT"
     }
   ]
 }

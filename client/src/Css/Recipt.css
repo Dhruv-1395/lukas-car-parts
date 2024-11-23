@@ -1,7 +1,14 @@
 .recipt{
     padding: 20px;
-    height: 100vh;
+   min-height: 100vh;
 }
 .recipt .content{
-    background-color: #e5e7e9;
+    background-color: #f0f3f4;
+    border-radius: 5px;
+}
+.recipt .logo{
+    padding: 10px 0 30px 0;
+}
+.recipt .download-btn{
+    margin: 20px 0;
 }
