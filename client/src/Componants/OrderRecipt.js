@@ -48,15 +48,15 @@ const OrderRecipt = () => {
 
   const handleDownload = () => {
     html2pdf()
-  .from(reciptRef.current)
-  .set({
-    margin: 10,
-    filename: 'receipt.pdf',
-    image: { type: 'jpeg', quality: 0.98 },
-    html2canvas: { scale: 4 },
-    jsPDF: { unit: 'mm', format: 'letter', orientation: 'portrait' }
-  })
-  .save();
+      .from(reciptRef.current)
+      .set({
+        margin: 10,
+        filename: 'receipt.pdf',
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { scale: 4 },
+        jsPDF: { unit: 'mm', format: 'letter', orientation: 'portrait' }
+      })
+      .save();
 
   }
 
