@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import '../Css/product.css'
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import toast from 'react-hot-toast'
 const Products = () => {
     const [products, setProducts] = useState([]);
     console.log(products);
@@ -17,6 +18,16 @@ const Products = () => {
         }
         data();
     }, [])
+
+    const Handleremove = async (id) => {
+        try {
+            await axios.delete(`http://localhost:5000/product/${id}`);
+            toast.success('Item Removed Successfully!')
+            setProducts(products.filter((product) => product.id!== id));
+        } catch (err) {
+            console.error(err);
+        }
+    }
     return (
         <div className='products'>
             <div className="head d-flex justify-content-between">
@@ -48,8 +59,8 @@ const Products = () => {
                                     <td>{product.title}</td>
                                     <td>{product.price}</td>
                                     <td>{product.sale || 0}%</td>
-                                    <td><Link to='' className='btn btn-primary'>Edit</Link></td>
-                                    <td><Link to='' className='btn btn-danger'>Remove</Link></td>
+                                    <td><Link to={`/edit/${product.id}`} className='btn btn-primary'>Edit</Link></td>
+                                    <td><button className='btn btn-danger' onClick={()=> Handleremove(product.id)}>Remove</button></td>
                                 </tr>
                             ))
                         ) : (

@@ -10,6 +10,8 @@ import {
 import Navbar from './Navbar';
 import Products from './Products';
 import Orders from './Orders';
+import Edit from './Edit';
+import AddProduct from './AddProduct'
 const { Header, Content, Footer } = Layout;
 
 const HomeLayout = () => {
@@ -47,6 +49,8 @@ const HomeLayout = () => {
         <Routes>
           <Route path='/' element={<Products />} />
           <Route path='/orders' element={<Orders />} />
+          <Route path='/add' element={<AddProduct />} />
+          <Route path='/edit/:id' element={<Edit />} />
         </Routes>
       </div>
     </Content>
