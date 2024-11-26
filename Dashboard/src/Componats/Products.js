@@ -1,12 +1,14 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect,useRef } from 'react'
+
 import '../Css/product.css'
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import toast from 'react-hot-toast'
+
 const Products = () => {
     const [products, setProducts] = useState([]);
-    console.log(products);
-
+    const searchref = useRef(null);
+    
     useEffect(() => {
         const data = async () => {
             try {
@@ -28,13 +30,21 @@ const Products = () => {
             console.error(err);
         }
     }
+
+    const HandleSearch = () =>{
+    let searchval = searchref.current.value;
+    const result = products.filter((item)=>{
+        return item.title.trim().toLowerCase() === searchval.trim().toLowerCase();
+    })    
+    setProducts(result);        
+    }
     return (
         <div className='products'>
             <div className="head d-flex justify-content-between">
                 <h3 className='title mb-3'>Product List</h3>
                 <div className="search">
-                    <input type="text" placeholder='search...'/>
-                    <button className='btn btn-success'>Search</button>
+                    <input ref={searchref} type="text" placeholder='search...'/>
+                    <button className='btn btn-success' onClick={HandleSearch}>Search</button>
                 </div>
             </div>
             <div className="table-responsive">

@@ -68,7 +68,7 @@ const Edit = () => {
             id="img"  
             onChange={(e)=> setImage(e.target.files[0])}
           />
-          <button type="submit">Update</button>
+          <button type="submit">Add product</button>
         </form>
       </div>
     </div>
