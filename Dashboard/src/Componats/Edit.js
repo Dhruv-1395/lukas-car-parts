@@ -9,7 +9,7 @@ const Edit = () => {
   const [price, setPrice] = useState('');
   const [sale, setSale] = useState('');
   const [rate, setRate] = useState('');
-
+  const [time,setTime] = useState('');
   const [image, setImage] = useState('');
   const [newimage, setNewImage] = useState('');
   const navigate = useNavigate();
@@ -28,7 +28,7 @@ console.log(newimage.name);
             setSale(res.data.sale);
             setRate(res.data.rate);
             setImage(res.data.img);
-            
+            setTime(res.data.time);
           })
           .catch(err => console.log(err));
       } catch (error) {
@@ -45,7 +45,7 @@ console.log(newimage.name);
     
 
     try {
-        await axios.put(`http://localhost:5000/product/${id}`,{title: pname, price: price, sale: sale,rate:rate, img:(newimage)? newimage.name : image})
+        await axios.put(`http://localhost:5000/product/${id}`,{title: pname, price: price, sale: sale,rate:rate, img:(newimage)? newimage.name : image,time:time})
         .then(res => console.log(res.data))
         .catch(err => console.log(err));
         toast.success("Product updated successfully!");

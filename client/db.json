@@ -1,15 +1,6 @@
 {
   "product": [
     {
-      "id": "6ef7",
-      "title": "tayer",
-      "price": "300",
-      "img": "product-2.webp",
-      "sale": "5",
-      "rate": "4",
-      "time": "2024-11-08T05:41:29.077Z"
-    },
-    {
       "id": "d0f4",
       "title": "handle",
       "price": "300",
@@ -19,30 +10,31 @@
       "time": "2024-11-08T05:41:52.596Z"
     },
     {
-      "id": "a576",
       "title": "wheel",
       "price": "1000",
+      "sale": "2",
+      "rate": "4",
       "img": "product-1.png",
-      "sale": "",
-      "rate": "2",
-      "time": "2024-11-08T05:42:23.124Z"
+      "time": "2024-11-08T05:42:23.124Z",
+      "id": "a576"
     },
     {
-      "id": "e722",
+      "id": "fcda",
       "title": "seat",
-      "price": "1200",
+      "price": "1300",
       "img": "product-4.png",
       "sale": "2",
       "rate": "3",
-      "time": "Mon, 25 Nov 2024 10:50:38 GMT"
+      "time": "Wed, 27 Nov 2024 09:40:47 GMT"
     },
     {
-      "title": "engine",
+      "id": "d1e5",
+      "title": "Engine",
       "price": "2000",
-      "sale": "",
-      "rate": "5",
       "img": "product-5.png",
-      "id": "7456"
+      "sale": "2",
+      "rate": "5",
+      "time": "Wed, 27 Nov 2024 09:49:13 GMT"
     }
   ],
   "user": [
@@ -113,25 +105,39 @@
       "fname": "Carlos Hall",
       "review": "Ut dicta eligendi sa",
       "rate": 5
+    },
+    {
+      "id": "507b",
+      "pid": "a576",
+      "fname": "Lawrence Ingram",
+      "review": "Non consectetur esse",
+      "rate": 3
+    },
+    {
+      "id": "a5ba",
+      "pid": "a576",
+      "fname": "Amos Gamble",
+      "review": "Voluptas nisi error ",
+      "rate": 5
     }
   ],
   "cart": [],
   "orders": [
     {
-      "id": "e7ad",
+      "id": "54f3",
       "order": [
         {
-          "pid": "ebd1",
+          "pid": "ac17",
           "item": "product-1.png",
           "product": "wheel",
-          "color": "black",
+          "color": "blue",
           "size": "large",
           "price": "1000",
-          "qty": 1,
-          "total": 1000
+          "qty": 3,
+          "total": 3000
         }
       ],
-      "date": "Tue, 26 Nov 2024 05:38:07 GMT"
+      "date": "Wed, 27 Nov 2024 09:48:10 GMT"
     }
   ]
 }

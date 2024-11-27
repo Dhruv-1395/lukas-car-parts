@@ -5,16 +5,14 @@ import { Link,useLocation } from "react-router-dom";
 const menus = [
   { name: "Products", path: "/" },
   { name: "Add Products", path: "/add" },
-  { name: "Users", path: "/users" },
   { name: "Orders", path: "/orders" },
 ]
 const Navbar = () => {
-  const [activemenu,setActiveMenu] = useState('/');
-  let location = useLocation();
+  const [activemenu,setActiveMenu] = useState('Products');
+  // let location = useLocation();
   // console.log(location.pathname);
   
   const MenuActive = (menu) =>{
-    console.log(menu);
     
     if (menu === activemenu) {
       return { color: '#eeb644'};
@@ -34,8 +32,8 @@ const Navbar = () => {
               menus.map((menus, index) => (
                 <li key={index} className="nav-item">
                   <Link to={menus.path} className="nav-link" 
-                  onClick={()=> setActiveMenu(location.pathname)}
-                  style={MenuActive(menus.path)}>{menus.name}
+                  onClick={()=> setActiveMenu(menus.name)}
+                  style={MenuActive(menus.name)}>{menus.name}
                   </Link>
                 </li>
               ))

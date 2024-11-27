@@ -2,6 +2,8 @@ import React from 'react'
 import '../Css/Banner.css'
 import { FaAngleRight } from "react-icons/fa6";
 const Banner = () => {
+ 
+
   return (
     <div className='banner d-flex  align-items-center text-white '>
         <div className="container text-center">
@@ -13,7 +15,7 @@ const Banner = () => {
                 </div>
         </div>
     </div>
-  )
+  );
 }
 
 export default Banner
